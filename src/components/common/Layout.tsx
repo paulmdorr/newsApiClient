@@ -7,10 +7,10 @@ import { ThemeProvider } from 'emotion-theming'
 import {
   ThemeChangerContext,
   ThemeChangerContextData,
-} from './wrappers/ThemeChangerProvider'
+} from '../wrappers/ThemeChangerProvider'
 import Header from './Header'
 
-const Layout = ({ children }) => {
+function Layout({ children }) {
   const MainWrapper = styled.main`
     margin: 0 auto;
     max-width: 960px;

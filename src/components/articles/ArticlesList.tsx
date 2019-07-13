@@ -20,6 +20,14 @@ const ArticleWrapper = styled.li`
   }
 `
 
+function ArticlesList({ articles = [] }) {
+  return (
+    <ArticlesListWrapper>
+      {articles ? articles.map(processArticle) : ''}
+    </ArticlesListWrapper>
+  )
+}
+
 function processArticle(data: ArticleProps) {
   return (
     <ArticleWrapper key={data.title}>
@@ -27,11 +35,5 @@ function processArticle(data: ArticleProps) {
     </ArticleWrapper>
   )
 }
-
-const ArticlesList = ({ articles = [] }) => (
-  <ArticlesListWrapper>
-    {articles ? articles.map(processArticle) : ''}
-  </ArticlesListWrapper>
-)
 
 export default ArticlesList
