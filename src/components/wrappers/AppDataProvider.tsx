@@ -9,7 +9,7 @@ const AppDataProvider = props => {
   const contextValue = [
     appDataState,
     action => {
-      setAppDataState(state => reducer(state, action))
+      reducer(action, setAppDataState)
     },
   ]
 

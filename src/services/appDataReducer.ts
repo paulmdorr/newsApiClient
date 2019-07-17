@@ -1,18 +1,25 @@
-import { ActionType, AppDataType } from './appCommonTypes'
+import { ActionType } from './appCommonTypes'
+import { getNews } from '../services/apiClient'
 
 /* Action types */
 export const LOAD_ARTICLES_BY_CATEGORY = 'LOAD_ARTICLES_BY_CATEGORY'
 
-export default function reducer(
-  state: AppDataType,
-  action: ActionType
-): AppDataType {
+export default async function reducer(
+  action: ActionType,
+  setAppDataState: Function
+) {
   switch (action.type) {
     case LOAD_ARTICLES_BY_CATEGORY:
-      const articles = { ...state.articles }
+      const { category } = action.data
 
-      return { ...state, articles, category: action.data.category }
+      const response = await getNews(category)
+
+      setAppDataState(state => ({
+        ...state,
+        articles: response.articles,
+        category: category,
+      }))
     default:
-      return state
+      setAppDataState(state => state)
   }
 }
