@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
+import { DefaultTheme } from 'styled-components'
 
 const themes = {
   light: {
-    color: '#303030',
-    background: '#f2f2f2',
+    colors: {
+      text: '#303030',
+      background: '#f2f2f2',
+    },
   },
   dark: {
-    color: '#f2f2f2',
-    background: '#303030',
+    colors: {
+      text: '#f2f2f2',
+      background: '#303030',
+    },
   },
 }
 
@@ -15,13 +20,8 @@ function processTheme(themeName) {
   return themes[themeName]
 }
 
-export type Theme = {
-  color: string
-  background: string
-}
-
 export type ThemeChangerContextData = {
-  theme: Theme
+  theme: DefaultTheme
   themeName: string
 }
 

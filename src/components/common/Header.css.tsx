@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 const StyledHeader = styled.header`
   margin-bottom: 50px;
