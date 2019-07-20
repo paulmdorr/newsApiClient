@@ -1,30 +1,25 @@
 import React from 'react'
-import styled from '@emotion/styled'
 
 import Article, { ArticleProps } from './Article'
+import {
+  ArticlesListWrapper,
+  ArticleWrapper,
+  LoadingHover,
+  LoadingText,
+} from './ArticlesList.css'
 
-const ArticlesListWrapper = styled.ul`
-  list-style: none;
-`
-
-const ArticleWrapper = styled.li`
-  box-shadow: 3px 3px 8px lightgray;
-  height: 300px;
-  margin: 20px 0;
-  transition: 600ms;
-  width: 920px;
-
-  &:hover {
-    box-shadow: 4px 4px 10px gray;
-    transition: 600ms;
-  }
-`
-
-function ArticlesList({ articles = [] }) {
+function ArticlesList({ articles = [], loading = false }) {
   return (
-    <ArticlesListWrapper>
-      {articles ? articles.map(processArticle) : ''}
-    </ArticlesListWrapper>
+    <>
+      {loading && (
+        <LoadingHover>
+          <LoadingText>Loading articles</LoadingText>
+        </LoadingHover>
+      )}
+      <ArticlesListWrapper>
+        {articles ? articles.map(processArticle) : ''}
+      </ArticlesListWrapper>
+    </>
   )
 }
 

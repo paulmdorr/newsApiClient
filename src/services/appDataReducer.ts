@@ -14,12 +14,12 @@ export default async function reducer(
 
       const response = await getNews(category)
 
-      setAppDataState(state => ({
+      return setAppDataState(state => ({
         ...state,
         articles: response.articles,
         category: category,
       }))
     default:
-      setAppDataState(state => state)
+      return setAppDataState(state => state)
   }
 }
