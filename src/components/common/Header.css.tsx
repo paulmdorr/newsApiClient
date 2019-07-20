@@ -1,8 +1,4 @@
-import styled from '@emotion/styled'
-
-export type HeaderProps = {
-  siteTitle: string
-}
+import styled from 'styled-components'
 
 const StyledHeader = styled.header`
   margin-bottom: 50px;
@@ -31,15 +27,4 @@ const Title = styled.p`
   margin-left: 20px;
 `
 
-const Header = ({ siteTitle }: HeaderProps) => (
-  <StyledHeader>
-    <HeaderInnerContainer>
-      <HeaderH1>
-        <Logo src="/static/logo.png" alt="App logo" />
-        <Title>{siteTitle}</Title>
-      </HeaderH1>
-    </HeaderInnerContainer>
-  </StyledHeader>
-)
-
-export default Header
+export { StyledHeader, HeaderInnerContainer, HeaderH1, Logo, Title }

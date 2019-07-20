@@ -1,16 +1,16 @@
-import styled from '@emotion/styled'
-import { Theme } from '../wrappers/ThemeChangerProvider'
+import styled from 'styled-components'
+import { DefaultTheme } from 'styled-components'
 
 type ArticleLinkProps = {
   href?: string
   children?: any[] | any
-  theme?: Theme
+  theme?: DefaultTheme
 }
 
 const ArticleLink = styled.a`
   display: grid;
   grid-template-columns: 20px 470px 30px 380px 20px;
-  color: ${({ theme }: ArticleLinkProps) => theme.color};
+  color: ${({ theme }: ArticleLinkProps) => theme.colors.text};
   text-decoration: none;
 `
 

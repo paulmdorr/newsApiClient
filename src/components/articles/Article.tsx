@@ -20,22 +20,14 @@ export type ArticleProps = {
   urlToImage: string
 }
 
-function processAuthor(author: string) {
-  return author ? `Written by: ${author}` : ''
-}
-
-function processDate(date: string) {
-  return `Published at: ${new Date(date).toLocaleDateString()}`
-}
-
-const Article = ({
+function Article({
   title,
   author,
   publishedAt,
   description,
   url,
   urlToImage,
-}: ArticleProps) => {
+}: ArticleProps) {
   return (
     <ArticleLink href={url}>
       <ArticleTextWrapper>
@@ -49,6 +41,14 @@ const Article = ({
       <ArticleImage src={urlToImage} alt={title} />
     </ArticleLink>
   )
+}
+
+function processAuthor(author: string) {
+  return author ? `Written by: ${author}` : ''
+}
+
+function processDate(date: string) {
+  return `Published at: ${new Date(date).toLocaleDateString()}`
 }
 
 export default Article
