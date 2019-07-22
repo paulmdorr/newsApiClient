@@ -12,6 +12,11 @@ const ArticleLink = styled.a`
   grid-template-columns: 20px 470px 30px 380px 20px;
   color: ${({ theme }: ArticleLinkProps) => theme.colors.text};
   text-decoration: none;
+
+  @media screen and (max-width: ${({ theme }) => theme.sizes.maxMobileSize}) {
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 50% 50%;
+  }
 `
 
 const ArticleTextWrapper = styled.div`
@@ -20,6 +25,11 @@ const ArticleTextWrapper = styled.div`
   max-height: 260px;
   margin: 20px 0;
   overflow: hidden;
+
+  @media screen and (max-width: ${({ theme }) => theme.sizes.maxMobileSize}) {
+    grid-row-start: 2;
+    max-height: none;
+  }
 `
 
 const ArticleHeader = styled.h3`
@@ -47,14 +57,24 @@ const ArticleContent = styled.article`
   grid-column-start: 2;
   grid-column-end: 3;
   margin-top: 15px;
+
+  @media screen and (max-width: ${({ theme }) => theme.sizes.maxMobileSize}) {
+    grid-row-start: 2;
+  }
 `
 
 const ArticleImage = styled.img`
   grid-column-start: 4;
   grid-column-end: 5;
-  height: 260px;
+  height: auto;
   margin: 20px 0;
-  width: 380px;
+  width: 100%;
+
+  @media screen and (max-width: ${({ theme }) => theme.sizes.maxMobileSize}) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+  }
 `
 
 export {

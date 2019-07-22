@@ -25,6 +25,10 @@ const Logo = styled.img`
 
 const Title = styled.p`
   margin-left: 20px;
+
+  @media screen and (max-width: ${({ theme }) => theme.sizes.maxMobileSize}) {
+    margin: auto;
+  }
 `
 
 export { StyledHeader, HeaderInnerContainer, HeaderH1, Logo, Title }
