@@ -11,6 +11,11 @@ const handle = app.getRequestHandler()
 app.prepare().then(() => {
   const server = express()
 
+  if (!dev) {
+    const compression = require('compression')
+    server.use(compression())
+  }
+
   server.get('/api/news(/:category)?', (req, res) => {
     api.processReq(req, res)
   })
@@ -19,7 +24,7 @@ app.prepare().then(() => {
     return handle(req, res)
   })
 
-  server.listen(port, err => {
+  server.listen(port, '0.0.0.0', err => {
     if (err) throw err
     console.log(`> Ready on http://localhost:${port}`)
   })
