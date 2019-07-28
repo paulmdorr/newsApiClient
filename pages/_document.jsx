@@ -22,7 +22,7 @@ export default class MyDocument extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <meta name="theme-color" content="#ff6600" />
+          <meta name="theme-color" content="#303030" />
           <link rel="apple-touch-icon" href="/static/icon.png" />
           <meta name="apple-mobile-web-app-title" content="Hacker News" />
           <meta

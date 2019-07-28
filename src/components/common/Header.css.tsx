@@ -6,7 +6,7 @@ const StyledHeader = styled.header`
 `
 
 const HeaderInnerContainer = styled.div`
-  border-bottom: 3px solid #e4e4e4;
+  border-bottom: 2px solid #d2cbac;
   margin: 0 auto;
   max-width: 960px;
   padding: 20px;
