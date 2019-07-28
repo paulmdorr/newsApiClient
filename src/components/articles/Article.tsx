@@ -8,6 +8,8 @@ import {
   ArticleAuthor,
   ArticleDate,
   ArticleContent,
+  ArticleImageWrapper,
+  ArticleImageHelper,
   ArticleImage,
 } from './Article.css'
 
@@ -38,7 +40,10 @@ function Article({
         </MetaWrapper>
         <ArticleContent>{description}</ArticleContent>
       </ArticleTextWrapper>
-      <ArticleImage src={urlToImage} alt={title} />
+      <ArticleImageWrapper>
+        <ArticleImageHelper />
+        <ArticleImage src={urlToImage} alt={title} />
+      </ArticleImageWrapper>
     </ArticleLink>
   )
 }

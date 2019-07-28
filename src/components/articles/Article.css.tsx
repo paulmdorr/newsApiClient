@@ -63,11 +63,12 @@ const ArticleContent = styled.article`
   }
 `
 
-const ArticleImage = styled.img`
+const ArticleImageWrapper = styled.div`
   grid-column-start: 4;
   grid-column-end: 5;
-  height: auto;
+  height: 260px;
   margin: 20px 0;
+  overflow: hidden;
   width: 100%;
 
   @media screen and (max-width: ${({ theme }) => theme.sizes.maxMobileSize}) {
@@ -75,6 +76,18 @@ const ArticleImage = styled.img`
     grid-column-end: 3;
     grid-row-start: 1;
   }
+`
+
+const ArticleImageHelper = styled.span`
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+`
+
+const ArticleImage = styled.img`
+  height: auto;
+  vertical-align: middle;
+  width: 100%;
 `
 
 export {
@@ -85,5 +98,7 @@ export {
   ArticleAuthor,
   ArticleDate,
   ArticleContent,
+  ArticleImageWrapper,
+  ArticleImageHelper,
   ArticleImage,
 }
