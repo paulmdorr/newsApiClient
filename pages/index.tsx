@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
+import Helmet from 'react-helmet'
 
 import LayoutThemeWrapper from '../src/components/wrappers/LayoutThemeWrapper'
 import ArticlesList from '../src/components/articles/ArticlesList'
@@ -7,6 +8,7 @@ import { AppDataContext } from '../src/components/wrappers/AppDataProvider'
 import { categories } from '../src/services/constants'
 import { getNews } from '../src/services/apiClient'
 import { LOAD_ARTICLES_BY_CATEGORY } from '../src/services/appDataReducer'
+import { capitalize } from '../src/services/functions'
 
 function Index({ articles }) {
   const [appData, dispatch] = useContext<any>(AppDataContext)
@@ -40,6 +42,13 @@ function Index({ articles }) {
 
   return (
     <LayoutThemeWrapper>
+      <Helmet>
+        <title>
+          {`News API Client | Showing articles for: ${getCategoryName(
+            appData.category
+          )}`}
+        </title>
+      </Helmet>
       <CategorySelect
         options={categories}
         selected={selectedCategory}
@@ -52,6 +61,10 @@ function Index({ articles }) {
 
 Index.getInitialProps = async function() {
   return getNews()
+}
+
+function getCategoryName(category) {
+  return category ? capitalize(category) : 'General'
 }
 
 export default Index

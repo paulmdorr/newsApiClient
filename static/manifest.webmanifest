@@ -1,0 +1,16 @@
+{
+  "name": "News API Client",
+  "short_name": "News API Client",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f0f0f0",
+  "theme_color": "#ff6600",
+  "description": "A simple PWA Client for the News API.",
+  "icons": [
+    {
+      "src": "/static/logo.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ]
+}
