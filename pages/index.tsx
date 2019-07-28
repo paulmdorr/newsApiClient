@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 
 import LayoutThemeWrapper from '../src/components/wrappers/LayoutThemeWrapper'
 import ArticlesList from '../src/components/articles/ArticlesList'
@@ -20,6 +20,21 @@ function Index({ articles }) {
       data: { category: event.target.value },
     }).then(() => setLoading(false))
   }
+
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/service-worker.js', { scope: './' })
+        .then(reg => {
+          // registration worked
+          console.log('Registration succeeded. Scope is ' + reg.scope)
+        })
+        .catch(error => {
+          // registration failed
+          console.log('Registration failed with ' + error)
+        })
+    }
+  }, [])
 
   const currentArticles = appData.category ? appData.articles : articles
 

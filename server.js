@@ -1,5 +1,7 @@
 const express = require('express')
 const next = require('next')
+const { join } = require('path')
+const { parse } = require('url')
 
 const api = require('./src/api')
 
@@ -15,6 +17,13 @@ app.prepare().then(() => {
     const compression = require('compression')
     server.use(compression())
   }
+
+  server.get('/service-worker.js', (req, res) => {
+    const parsedUrl = parse(req.url, true)
+    const { pathname } = parsedUrl
+    const filePath = join(__dirname, dev ? '.static' : '.next', pathname)
+    app.serveStatic(req, res, filePath)
+  })
 
   server.get('/api/news(/:category)?', (req, res) => {
     api.processReq(req, res)
