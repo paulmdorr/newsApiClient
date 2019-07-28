@@ -6,5 +6,8 @@ declare module 'styled-components' {
       text: string
       background: string
     }
+    sizes: {
+      maxMobileSize: string
+    }
   }
 }

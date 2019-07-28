@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
+import Helmet from 'react-helmet'
 
 import LayoutThemeWrapper from '../src/components/wrappers/LayoutThemeWrapper'
 import ArticlesList from '../src/components/articles/ArticlesList'
@@ -7,6 +8,7 @@ import { AppDataContext } from '../src/components/wrappers/AppDataProvider'
 import { categories } from '../src/services/constants'
 import { getNews } from '../src/services/apiClient'
 import { LOAD_ARTICLES_BY_CATEGORY } from '../src/services/appDataReducer'
+import { capitalize } from '../src/services/functions'
 
 function Index({ articles }) {
   const [appData, dispatch] = useContext<any>(AppDataContext)
@@ -21,10 +23,32 @@ function Index({ articles }) {
     }).then(() => setLoading(false))
   }
 
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/service-worker.js', { scope: './' })
+        .then(reg => {
+          // registration worked
+          console.log('Registration succeeded. Scope is ' + reg.scope)
+        })
+        .catch(error => {
+          // registration failed
+          console.log('Registration failed with ' + error)
+        })
+    }
+  }, [])
+
   const currentArticles = appData.category ? appData.articles : articles
 
   return (
     <LayoutThemeWrapper>
+      <Helmet>
+        <title>
+          {`News API Client | Showing articles for: ${getCategoryName(
+            appData.category
+          )}`}
+        </title>
+      </Helmet>
       <CategorySelect
         options={categories}
         selected={selectedCategory}
@@ -37,6 +61,10 @@ function Index({ articles }) {
 
 Index.getInitialProps = async function() {
   return getNews()
+}
+
+function getCategoryName(category) {
+  return category ? capitalize(category) : 'General'
 }
 
 export default Index

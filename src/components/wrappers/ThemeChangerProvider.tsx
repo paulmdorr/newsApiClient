@@ -7,11 +7,17 @@ const themes = {
       text: '#303030',
       background: '#f2f2f2',
     },
+    sizes: {
+      maxMobileSize: '930px',
+    },
   },
   dark: {
     colors: {
       text: '#f2f2f2',
       background: '#303030',
+    },
+    sizes: {
+      maxMobileSize: '930px',
     },
   },
 }

@@ -17,7 +17,23 @@ function Layout({ children }) {
   const { theme } = useContext<ThemeChangerContextData>(ThemeChangerContext)
 
   const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css?family=Sahitya');
+    @font-face {
+      font-family: Sahitya;
+      src: local('Sahitya Regular'),
+        local('Sahitya-Regular'),
+        url(/static/fonts/Sahitya-Regular.ttf) format('truetype'),
+        url(/static/fonts/Sahitya-Regular.WOFF) format('woff');
+      font-weight: 400;
+    }
+
+    @font-face {
+      font-family: Sahitya;
+      src: local('Sahitya Bold'),
+        local('Sahitya-Bold'),
+        url(/static/fonts/Sahitya-Bold.ttf) format('truetype'),
+        url(/static/fonts/Sahitya-Bold.WOFF) format('woff');
+      font-weight: 700;
+    }
 
     body {
       color: ${theme.colors.text};

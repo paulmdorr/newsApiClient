@@ -16,33 +16,48 @@ const ArticleWrapper = styled.li`
     box-shadow: 4px 4px 10px gray;
     transition: 600ms;
   }
+
+  @media screen and (max-width: ${({ theme }) => theme.sizes.maxMobileSize}) {
+    height: auto;
+  }
 `
 
 const LoadingHover = styled.div`
   position: absolute;
   height: 100%;
-  background: #fffe;
+  background: ${({ theme }) => theme.colors.background};
   margin: 20px auto;
+  opacity: 0.9;
   width: 920px;
+
+  @media screen and (max-width: ${({ theme }) => theme.sizes.maxMobileSize}) {
+    width: 98%;
+  }
 `
 
 const ellipsis = keyframes`
   to {
-    width: 1.25em;
+    width: 28px;
   }
 `
 
 const LoadingText = styled.div`
-  padding: 285px 0 0 375px;
   font-size: 30px;
+  padding-top: 285px;
+  text-align: center;
 
   &:after {
-    overflow: hidden;
-    display: inline-block;
-    vertical-align: bottom;
-    animation: ${ellipsis} 900ms steps(5, end) 0ms infinite;
+    animation: ${ellipsis} 900ms steps(4, end) 0ms infinite;
     content: '...';
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    vertical-align: bottom;
     width: 0px;
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.sizes.maxMobileSize}) {
+    padding-top: 185px;
   }
 `
 

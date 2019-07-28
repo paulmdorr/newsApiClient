@@ -18,21 +18,19 @@ const mockArticle = {
 describe('<Article />', () => {
   test(`displays an article with the processed data`, async () => {
     const wrapper = shallow(<Article {...mockArticle} />)
-    expect(wrapper.find('Styled(h3)').props().children).toBe('Test article')
-    expect(
-      wrapper
-        .find('Styled(span)')
-        .first()
-        .props().children
-    ).toBe('Written by: Test author')
-    expect(
-      wrapper
-        .find('Styled(span)')
-        .last()
-        .props().children
-    ).toBe('Published at: 1/1/1900')
-    expect(wrapper.find('Styled(img)').props().alt).toBe('Test article')
-    expect(wrapper.find('Styled(article)').props().children).toBe(
+    expect(wrapper.find('Articlecss__ArticleHeader').props().children).toBe(
+      'Test article'
+    )
+    expect(wrapper.find('Articlecss__ArticleAuthor').props().children).toBe(
+      'Written by: Test author'
+    )
+    expect(wrapper.find('Articlecss__ArticleDate').props().children).toBe(
+      'Published at: 1/1/1900'
+    )
+    expect(wrapper.find('Articlecss__ArticleImage').props().alt).toBe(
+      'Test article'
+    )
+    expect(wrapper.find('Articlecss__ArticleContent').props().children).toBe(
       'Test description'
     )
   })
@@ -41,11 +39,6 @@ describe('<Article />', () => {
     mockArticle.author = ''
     const wrapper = shallow(<Article {...mockArticle} />)
 
-    expect(
-      wrapper
-        .find('Styled(span)')
-        .first()
-        .props().children
-    ).toBe('')
+    expect(wrapper.find('Articlecss__ArticleAuthor').props().children).toBe('')
   })
 })

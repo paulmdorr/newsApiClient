@@ -6,7 +6,7 @@ const StyledHeader = styled.header`
 `
 
 const HeaderInnerContainer = styled.div`
-  border-bottom: 3px solid #e4e4e4;
+  border-bottom: 2px solid #d2cbac;
   margin: 0 auto;
   max-width: 960px;
   padding: 20px;
@@ -25,6 +25,10 @@ const Logo = styled.img`
 
 const Title = styled.p`
   margin-left: 20px;
+
+  @media screen and (max-width: ${({ theme }) => theme.sizes.maxMobileSize}) {
+    margin: auto;
+  }
 `
 
 export { StyledHeader, HeaderInnerContainer, HeaderH1, Logo, Title }
