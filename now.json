@@ -1,0 +1,7 @@
+{
+  "build": {
+    "env": {
+      "NEWS_API_KEY": "@newsapikey"
+    }
+  }
+}
