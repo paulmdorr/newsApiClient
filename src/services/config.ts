@@ -4,6 +4,6 @@ export default {
   },
   staging: {},
   production: {
-    baseUrl: 'http://192.168.0.10:3000',
+    baseUrl: 'https://newsapiclient.paulmdorr.now.sh',
   },
 }[process.env.NODE_ENV]
