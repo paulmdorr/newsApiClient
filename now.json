@@ -4,6 +4,10 @@
     { "src": "package.json", "use": "@now/next" },
     { "src": "server.js", "use": "@now/node" }
   ],
+  "routes": [
+    { "src": "/api.*", "dest": "server.js" },
+    { "src": "/service-worker.js", "dest": "server.js" }
+  ],
   "build": {
     "env": {
       "NEWS_API_KEY": "@newsapikey"
