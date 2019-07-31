@@ -2,11 +2,11 @@
   "version": 2,
   "builds": [
     { "src": "package.json", "use": "@now/next" },
-    { "src": "server.js", "use": "@now/node" }
+    { "src": "src/api/*.js", "use": "@now/node" }
   ],
   "routes": [
-    { "src": "/api.*", "dest": "server.js" },
-    { "src": "/service-worker.js", "dest": "server.js" }
+    { "src": "/api/news/(.*)?", "dest": "/src/api/index.js?category=$1" },
+    { "src": "/service-worker.js", "dest": "/static/service-worker.js" }
   ],
   "build": {
     "env": {

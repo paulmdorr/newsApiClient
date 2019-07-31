@@ -72,6 +72,7 @@ const ArticleImageWrapper = styled.div`
   width: 100%;
 
   @media screen and (max-width: ${({ theme }) => theme.sizes.maxMobileSize}) {
+    height: auto;
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
