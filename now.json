@@ -8,9 +8,7 @@
     { "src": "/api/news/(.*)?", "dest": "/src/api/index.js?category=$1" },
     { "src": "/service-worker.js", "dest": "/static/service-worker.js" }
   ],
-  "build": {
-    "env": {
-      "NEWS_API_KEY": "@newsapikey"
-    }
+  "env": {
+    "NEWS_API_KEY": "@newsapikey"
   }
 }
