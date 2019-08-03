@@ -29,6 +29,7 @@ const LoadingHover = styled.div`
   margin: 20px auto;
   opacity: 0.9;
   width: 920px;
+  z-index: 99;
 
   @media screen and (max-width: ${({ theme }) => theme.sizes.maxMobileSize}) {
     width: 98%;
