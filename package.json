@@ -6,11 +6,10 @@
   "author": "Paul M Dorr",
   "license": "MIT",
   "scripts": {
-    "dev": "node server.js",
     "build": "next build",
     "start": "now dev",
     "deploy": "now",
-    "test": "NODE_ENV=test jest --watch --coverage",
+    "test": "NODE_ENV=test jest --coverage --verbose",
     "e2e": "cypress open"
   },
   "dependencies": {

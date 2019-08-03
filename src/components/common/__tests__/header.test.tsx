@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Header from '../common/Header'
+import Header from '../Header'
 
 describe('<Header />', () => {
   test(`displays the header's title`, async () => {
