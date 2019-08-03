@@ -27,9 +27,7 @@ describe('<Article />', () => {
     expect(wrapper.find('Articlecss__ArticleDate').props().children).toBe(
       'Published at: 1/1/1900'
     )
-    expect(wrapper.find('Articlecss__ArticleImage').props().alt).toBe(
-      'Test article'
-    )
+    expect(wrapper.find('ImageLoader').props().alt).toBe('Test article')
     expect(wrapper.find('Articlecss__ArticleContent').props().children).toBe(
       'Test description'
     )

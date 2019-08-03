@@ -16,9 +16,7 @@ function ArticlesList({ articles = [], loading = false }) {
           <LoadingText>Loading articles</LoadingText>
         </LoadingHover>
       )}
-      <ArticlesListWrapper>
-        {articles ? articles.map(processArticle) : ''}
-      </ArticlesListWrapper>
+      <ArticlesListWrapper>{articles.map(processArticle)}</ArticlesListWrapper>
     </>
   )
 }

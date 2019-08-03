@@ -29,4 +29,10 @@ describe('<ArticlesList />', () => {
       wrapper.find('ArticlesListcss__ArticlesListWrapper').children().length
     ).toBe(0)
   })
+
+  test(`displays a loading hovering the articles list`, async () => {
+    const wrapper = shallow(<ArticlesList loading={true} />)
+
+    expect(wrapper.find('ArticlesListcss__LoadingHover')).toBeDefined()
+  })
 })
