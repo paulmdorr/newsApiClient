@@ -4,7 +4,7 @@ import {
   HeaderH1,
   Logo,
   Title,
-} from './Header.css'
+} from './styled/Header.css'
 
 export type HeaderProps = {
   siteTitle: string

@@ -12,7 +12,7 @@ import {
   ArticleContent,
   ArticleImageWrapper,
   ArticleImageHelper,
-} from './Article.css'
+} from './styled/Article.css'
 
 export type ArticleProps = {
   title: string

@@ -6,7 +6,7 @@ import {
   ArticleWrapper,
   LoadingHover,
   LoadingText,
-} from './ArticlesList.css'
+} from './styled/ArticlesList.css'
 
 function ArticlesList({ articles = [], loading = false }) {
   return (
