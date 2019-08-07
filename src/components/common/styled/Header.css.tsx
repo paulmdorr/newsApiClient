@@ -18,13 +18,12 @@ const HeaderH1 = styled.h1`
 `
 
 const Logo = styled.img`
-  opacity: 0.8;
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
 `
 
 const Title = styled.p`
-  margin-left: 20px;
+  margin: 0 0 0 30px;
 
   @media screen and (max-width: ${({ theme }) => theme.sizes.maxMobileSize}) {
     margin: auto;
