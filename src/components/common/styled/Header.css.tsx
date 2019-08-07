@@ -26,7 +26,8 @@ const Title = styled.p`
   margin: 0 0 0 30px;
 
   @media screen and (max-width: ${({ theme }) => theme.sizes.maxMobileSize}) {
-    margin: auto;
+    font-size: 24px;
+    margin: auto 15px;
   }
 `
 

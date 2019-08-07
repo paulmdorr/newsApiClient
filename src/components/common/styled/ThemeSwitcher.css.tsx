@@ -127,6 +127,12 @@ const ToggleWrapper = styled.div`
   position: relative;
   transform: scale(0.6);
   width: 0;
+
+  @media screen and (max-width: ${({ theme }) => theme.sizes.maxMobileSize}) {
+    bottom: 35px;
+    left: 90%;
+    transform: scale(0.4);
+  }
   
   input {
     left: -999em;
