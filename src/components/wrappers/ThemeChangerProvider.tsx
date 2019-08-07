@@ -9,6 +9,8 @@ const themes = {
     colors: {
       text: '#303030',
       background: '#f2f2f2',
+      shadow: 'lightgray',
+      shadowHighlight: 'gray',
     },
     sizes: {
       maxMobileSize: '930px',
@@ -16,8 +18,10 @@ const themes = {
   },
   [THEME_DARK]: {
     colors: {
-      text: '#f2f2f2',
-      background: '#303030',
+      text: '#d5d5d5',
+      background: '#1c1c1c',
+      shadow: '#515151',
+      shadowHighlight: 'gray',
     },
     sizes: {
       maxMobileSize: '930px',
