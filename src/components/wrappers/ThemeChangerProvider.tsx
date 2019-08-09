@@ -1,20 +1,27 @@
 import React, { useState } from 'react'
 import { DefaultTheme } from 'styled-components'
 
+const THEME_LIGHT = 'light'
+const THEME_DARK = 'dark'
+
 const themes = {
-  light: {
+  [THEME_LIGHT]: {
     colors: {
       text: '#303030',
       background: '#f2f2f2',
+      shadow: 'lightgray',
+      shadowHighlight: 'gray',
     },
     sizes: {
       maxMobileSize: '930px',
     },
   },
-  dark: {
+  [THEME_DARK]: {
     colors: {
-      text: '#f2f2f2',
-      background: '#303030',
+      text: '#d5d5d5',
+      background: '#1c1c1c',
+      shadow: '#515151',
+      shadowHighlight: 'gray',
     },
     sizes: {
       maxMobileSize: '930px',
@@ -27,13 +34,14 @@ function processTheme(themeName) {
 }
 
 export type ThemeChangerContextData = {
+  setTheme?: Function
   theme: DefaultTheme
   themeName: string
 }
 
 const ThemeChangerContext = React.createContext<ThemeChangerContextData>({
-  theme: themes.light,
-  themeName: 'light',
+  theme: themes[THEME_LIGHT],
+  themeName: THEME_LIGHT,
 })
 
 type ThemeChangerProviderProps = {
@@ -41,26 +49,23 @@ type ThemeChangerProviderProps = {
 }
 
 const ThemeChangerProvider = (props: ThemeChangerProviderProps) => {
-  const [themeState, setThemeState] = useState({
-    theme: themes.light,
-    themeName: 'light',
-  })
-
-  const contextValue = {
+  const [themeState, setThemeState] = useState<ThemeChangerContextData>({
     setTheme: themeName => {
-      setThemeState({
+      setThemeState(prevState => ({
+        ...prevState,
         themeName,
         theme: processTheme(themeName),
-      })
+      }))
     },
-    ...themeState,
-  }
+    theme: themes[THEME_LIGHT],
+    themeName: THEME_LIGHT,
+  })
 
   return (
-    <ThemeChangerContext.Provider value={contextValue}>
+    <ThemeChangerContext.Provider value={themeState}>
       {props.children}
     </ThemeChangerContext.Provider>
   )
 }
 
-export { ThemeChangerContext, ThemeChangerProvider }
+export { ThemeChangerContext, ThemeChangerProvider, THEME_LIGHT, THEME_DARK }
