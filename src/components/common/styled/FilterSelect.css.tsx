@@ -9,18 +9,23 @@ const StyledSelect = styled.div`
   width: 130px;
 
   &:after {
-    bottom: 35px;
-    content: '\\2304';
+    bottom: 22px;
+    background: transparent url('/static/chevron-arrow-down.png') no-repeat;
+    content: '';
+    display: inline-block;
     font-size: 26px;
+    height: 26px;
     line-height: 16px;
+    opacity: 0.8;
     position: relative;
     pointer-events: none;
-    transition: 100ms linear;
+    transition: 200ms linear;
+    width: 26px;
   }
 
   &:hover:after {
-    bottom: 33px;
-    transition: 100ms linear;
+    bottom: 25px;
+    transition: 200ms linear;
   }
 
   select {
