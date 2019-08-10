@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { DefaultTheme } from 'styled-components'
+import LazyLoad from 'react-lazy-load'
 
 type ArticleLinkProps = {
   href?: string
@@ -63,7 +64,7 @@ const ArticleContent = styled.article`
   }
 `
 
-const ArticleImageWrapper = styled.div`
+const ArticleImageWrapper = styled(LazyLoad)`
   grid-column-start: 4;
   grid-column-end: 5;
   height: 260px;
@@ -85,12 +86,6 @@ const ArticleImageHelper = styled.span`
   vertical-align: middle;
 `
 
-const ArticleImage = styled.img`
-  height: auto;
-  vertical-align: middle;
-  width: 100%;
-`
-
 export {
   ArticleLink,
   ArticleTextWrapper,
@@ -101,5 +96,4 @@ export {
   ArticleContent,
   ArticleImageWrapper,
   ArticleImageHelper,
-  ArticleImage,
 }

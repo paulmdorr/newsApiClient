@@ -8,7 +8,9 @@ const Wrapper = styled.div`
 
 const Text = styled.span`
   display: inline-block;
+  font-size: 18px;
   margin-right: 5px;
+  overflow: hidden;
 `
 
 function CategorySelect(props) {

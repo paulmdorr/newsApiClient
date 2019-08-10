@@ -1,5 +1,7 @@
 import React from 'react'
 
+import ImageLoader from '../common/ImageLoader'
+
 import {
   ArticleLink,
   ArticleTextWrapper,
@@ -10,8 +12,7 @@ import {
   ArticleContent,
   ArticleImageWrapper,
   ArticleImageHelper,
-  ArticleImage,
-} from './Article.css'
+} from './styled/Article.css'
 
 export type ArticleProps = {
   title: string
@@ -41,8 +42,10 @@ function Article({
         <ArticleContent>{description}</ArticleContent>
       </ArticleTextWrapper>
       <ArticleImageWrapper>
-        <ArticleImageHelper />
-        <ArticleImage src={urlToImage} alt={title} />
+        <>
+          <ArticleImageHelper />
+          <ImageLoader urlToImage={urlToImage} alt={title} />
+        </>
       </ArticleImageWrapper>
     </ArticleLink>
   )

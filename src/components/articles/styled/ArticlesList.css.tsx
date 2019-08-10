@@ -7,13 +7,13 @@ const ArticlesListWrapper = styled.ul`
 `
 
 const ArticleWrapper = styled.li`
-  box-shadow: 3px 3px 8px lightgray;
+  box-shadow: 3px 3px 8px ${({ theme }) => theme.colors.shadow};
   height: 300px;
   margin: 20px 0;
   transition: 600ms;
 
   &:hover {
-    box-shadow: 4px 4px 10px gray;
+    box-shadow: 4px 4px 10px ${({ theme }) => theme.colors.shadowHighlight};
     transition: 600ms;
   }
 
@@ -29,6 +29,7 @@ const LoadingHover = styled.div`
   margin: 20px auto;
   opacity: 0.9;
   width: 920px;
+  z-index: 99;
 
   @media screen and (max-width: ${({ theme }) => theme.sizes.maxMobileSize}) {
     width: 98%;

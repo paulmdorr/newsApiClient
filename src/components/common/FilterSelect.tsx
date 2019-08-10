@@ -1,8 +1,12 @@
+import { StyledSelect } from './styled/FilterSelect.css'
+
 function FilterSelector({ options, selected, onChange }) {
   return (
-    <select onChange={onChange} value={selected}>
-      {options ? options.map(processOption) : ''}
-    </select>
+    <StyledSelect>
+      <select onChange={onChange} value={selected}>
+        {options ? options.map(processOption) : ''}
+      </select>
+    </StyledSelect>
   )
 }
 

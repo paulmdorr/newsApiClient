@@ -6,7 +6,7 @@ import {
   ArticleWrapper,
   LoadingHover,
   LoadingText,
-} from './ArticlesList.css'
+} from './styled/ArticlesList.css'
 
 function ArticlesList({ articles = [], loading = false }) {
   return (
@@ -16,9 +16,7 @@ function ArticlesList({ articles = [], loading = false }) {
           <LoadingText>Loading articles</LoadingText>
         </LoadingHover>
       )}
-      <ArticlesListWrapper>
-        {articles ? articles.map(processArticle) : ''}
-      </ArticlesListWrapper>
+      <ArticlesListWrapper>{articles.map(processArticle)}</ArticlesListWrapper>
     </>
   )
 }
