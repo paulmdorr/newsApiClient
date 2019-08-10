@@ -1,3 +1,7 @@
 {
-  "baseUrl": "http://localhost:3000"
+  "baseUrl": "http://localhost:3000",
+  "projectId": "69yshr",
+  "env": {
+    "NEWS_API_KEY": "8cbade1893a84c8bab6e11346af0ba87"
+  }
 }
