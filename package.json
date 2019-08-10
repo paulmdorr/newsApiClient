@@ -10,6 +10,7 @@
     "start": "now dev",
     "deploy": "now",
     "test": "NODE_ENV=test jest --coverage --verbose",
+    "test:watch": "NODE_ENV=test jest --verbose --watch",
     "e2e": "cypress run",
     "cy:open": "cypress open"
   },

@@ -17,5 +17,9 @@ module.exports = {
       statements: 100,
     },
   },
-  coveragePathIgnorePatterns: ['/node_modules/', './src/components/.*?/styled'],
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    './src/components/.*?/styled',
+    './src/components/wrappers',
+  ],
 }

@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { DefaultTheme } from 'styled-components'
 
 const THEME_LIGHT = 'light'
 const THEME_DARK = 'dark'
+const useThemeChangerContext = () =>
+  useContext<ThemeChangerContextData>(ThemeChangerContext)
 
 const themes = {
   [THEME_LIGHT]: {
@@ -68,4 +70,10 @@ const ThemeChangerProvider = (props: ThemeChangerProviderProps) => {
   )
 }
 
-export { ThemeChangerContext, ThemeChangerProvider, THEME_LIGHT, THEME_DARK }
+export {
+  ThemeChangerContext,
+  ThemeChangerProvider,
+  useThemeChangerContext,
+  THEME_LIGHT,
+  THEME_DARK,
+}
