@@ -1,7 +1,5 @@
-import { useContext } from 'react'
 import {
-  ThemeChangerContext,
-  ThemeChangerContextData,
+  useThemeChangerContext,
   THEME_LIGHT,
   THEME_DARK,
 } from '../wrappers/ThemeChangerProvider'
@@ -25,9 +23,7 @@ export type ThemeSwitcherProps = {
 }
 
 const ThemeSwitcher = () => {
-  const { themeName, setTheme } = useContext<ThemeChangerContextData>(
-    ThemeChangerContext
-  )
+  const { themeName, setTheme } = useThemeChangerContext()
 
   function onChange() {
     const newTheme = themeName === THEME_LIGHT ? THEME_DARK : THEME_LIGHT
