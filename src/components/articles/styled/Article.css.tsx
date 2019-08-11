@@ -16,7 +16,6 @@ const ArticleLink = styled.a`
 
   @media screen and (max-width: ${({ theme }) => theme.sizes.maxMobileSize}) {
     grid-template-columns: 5% 90% 5%;
-    grid-template-rows: 50% 50%;
   }
 `
 
