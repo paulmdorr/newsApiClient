@@ -17,6 +17,9 @@ const themes = {
     sizes: {
       maxMobileSize: '930px',
     },
+    images: {
+      chevronDown: '/static/chevron-arrow-down.png',
+    },
   },
   [THEME_DARK]: {
     colors: {
@@ -27,6 +30,9 @@ const themes = {
     },
     sizes: {
       maxMobileSize: '930px',
+    },
+    images: {
+      chevronDown: '/static/chevron-arrow-down-white.png',
     },
   },
 }

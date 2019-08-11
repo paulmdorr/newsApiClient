@@ -10,7 +10,8 @@ const StyledSelect = styled.div`
 
   &:after {
     bottom: 22px;
-    background: transparent url('/static/chevron-arrow-down.png') no-repeat;
+    background: transparent url(${({ theme }) => theme.images.chevronDown})
+      no-repeat;
     content: '';
     display: inline-block;
     font-size: 26px;
@@ -40,6 +41,8 @@ const StyledSelect = styled.div`
     width: 130px;
 
     option {
+      background: ${({ theme }) => theme.colors.background};
+      color: ${({ theme }) => theme.colors.text};
       font-family: Sahitya;
       font-size: 18px;
     }
