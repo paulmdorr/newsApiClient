@@ -41,7 +41,7 @@ function Article({
         </MetaWrapper>
         <ArticleContent>{description}</ArticleContent>
       </ArticleTextWrapper>
-      <ArticleImageWrapper>
+      <ArticleImageWrapper height="260px">
         <>
           <ArticleImageHelper />
           <ImageLoader urlToImage={urlToImage} alt={title} />

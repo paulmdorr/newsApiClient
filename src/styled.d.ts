@@ -11,5 +11,8 @@ declare module 'styled-components' {
     sizes: {
       maxMobileSize: string
     }
+    images: {
+      chevronDown: string
+    }
   }
 }
