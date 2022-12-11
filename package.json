@@ -17,7 +17,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "compression": "^1.7.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "micro": "^9.3.4",
     "next": "^9.0.0",
     "react": "^16.8.6",
